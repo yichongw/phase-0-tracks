@@ -1,0 +1,55 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <title>Online Job Application</title>        
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">       
+</head>
+
+    <body>
+
+    	<h1>Online Job Application</h1>
+        
+        <p>Thank you for applying. Please complete the questions below:</p>
+
+		 <form name="Job App" action="https://httpbin.org/post" method="post">
+		  <fieldset>
+			    <div>
+			      <label>First Name:</label>
+			      <input type="text" name="FirstName"><br>
+			    </div>
+
+				<div>
+			      <label>Last Name:</label>
+			      <input type="text" name="LastName"><br>
+			    </div>
+
+			    <div>
+			      <label>Phone:</label>
+			      <input type="text" name="Phone"><br>
+			    </div>
+			    <div>
+			      <label>Email:</label>
+			      <input type="Email" name="Email"><br>
+			    </div>
+
+			    <div>
+			      <label>How did you hear about us?</label><br>
+
+			      <input type="radio" name="source" value="website">  website<br>
+			      <input type="radio" name="source" value="friend">  friend<br>
+			      <input type="radio" name="source" value="radio">  radio
+			    </div>
+
+			    <div>
+			     	<label>Why do you think we should hire you?</label>
+			     	<textarea rows="3" cols="50"></textarea>
+			    </div>
+
+		  </fieldset>
+		  
+		  		<div>
+		  			<button type="submit" formaction="success.html" value="submit to another page">Submit your application</button>
+		  		</div>
+		</form>
+    </body>
+</html>
