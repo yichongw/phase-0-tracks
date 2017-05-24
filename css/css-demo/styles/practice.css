@@ -1,0 +1,35 @@
+#contact-info {
+	font-size: .8em;
+
+}
+
+section.job {
+	background-color: #e9e5dc;
+	border-radius: 25px;
+	padding: 20px; 
+	margin-bottom: 10%;
+	margin-top: 10%;
+}
+
+/*pseudoselector gives conditional styling to a selector*/
+section.job:hover {
+	background-color: brown;
+}
+
+ul.accomplishments {
+	font-size: .8em;
+}
+
+/*"Cascading" is arranging the sequences for style
+when there is a conflict the latter style will preceed*/
+ul {
+  list-style-type: circle;
+}
+
+/*create an id in the index and then use that id for the styling*/
+li#hula {
+	color: green;
+}
+
+
+
