@@ -1,4 +1,4 @@
-puts "How many employees will be processed (please enter a number)?"
+puts "How many employees will be processed? (please enter a number)"
 employees = gets.chomp.to_i
 	number = 0
 	until number == employees
