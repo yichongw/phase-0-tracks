@@ -46,7 +46,7 @@ def create_list(item)
   p grocery_list
 end
 
-# list_name = create_list("Lemonade Tomatoes Onions")
+list_name = create_list("Lemonade Tomatoes Onions")
 
 def add_modify_item(list, item, quantity)
   list[item] = quantity
@@ -82,3 +82,21 @@ remove_item(new_list, "Lemonade")
 add_modify_item(new_list, "Ice Cream", 1)
 pretty(new_list)
 
+# Release 4:
+# What did you learn about pseudocode from working on this challenge?
+# pseudocode is like the outline of the challenge. Make sure it is well written. As long as you follow it, it will guide your codes.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# Hashes will give you everything you'll need for this challenge. But if you decided to use arrays, you'll have to use multiple to defind the list, item, and quantity. Therefore, using arrays is not efficient.
+
+# What does a method return?
+# Method returns to the respecteive commands the user want it to. In this case, the hash.
+
+# What kind of things can you pass into methods as arguments?
+# Everything (strings, integers, floats, values, etc).
+
+# How can you pass information between methods?
+# As arguments.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# By defining create_list to another value, it will be able to link all of the defined methods together.
