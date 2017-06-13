@@ -46,29 +46,39 @@ def create_list(item)
   p grocery_list
 end
 
-list_name = create_list("Lemonade Tomatoes Onions")
+# list_name = create_list("Lemonade Tomatoes Onions")
 
 def add_modify_item(list, item, quantity)
   list[item] = quantity
   p list
 end
 
-add_modify_item(list_name, "Apple", 2)
+# add_modify_item(list_name, "Apple", 2)
 
 def remove_item(list, item)
   list.delete(item)
   p list
 end
-remove_item(list_name, "Apple")
+# remove_item(list_name, "Apple")
 
 # def update_quantity(list, item, quantity)
 #   list[item] = quantity
 # p list
 # end
-add_modify_item(list_name, "Onions", 3)
+# add_modify_item(list_name, "Onions", 3)
 
 def pretty(list)
   list.each {|item, quantity| p "You need to buy #{quantity} of #{item}."}
 end
-pretty(list_name)
+# pretty(list_name)
+
+# Release 2:
+new_list = create_list("Bread Ham Sugar Grape")
+add_modify_item(new_list, "Lemonade", 2)
+add_modify_item(new_list, "Tomatoes", 3)
+add_modify_item(new_list, "Onions", 1)
+add_modify_item(new_list, "Ice Cream", 4)
+remove_item(new_list, "Lemonade")
+add_modify_item(new_list, "Ice Cream", 1)
+pretty(new_list)
 
