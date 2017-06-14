@@ -1,6 +1,10 @@
 # Release 0:
 class Puppy
 
+	def initialize
+		p "Initializing new puppy instance ..."
+	end
+
   	def fetch(toy)
     	puts "I brought back the #{toy}!"
     	toy
@@ -33,3 +37,7 @@ puppy.speak(5)
 puppy.roll_over
 puppy.dog_years(3)
 puppy.jump(2)
+
+# Release 1:
+# Add initialize
+
