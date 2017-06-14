@@ -17,3 +17,6 @@ end
 Shout.yell_angrily("NO WAY")
 Shout.yelling_happily("WOOHOO")
 
+# Release 2:
+#Create module, add two classes for Bird and Plane, and add driver codes to Flight.rb
+
