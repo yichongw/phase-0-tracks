@@ -41,3 +41,42 @@ puppy.jump(2)
 # Release 1:
 # Add initialize
 
+# Release 2:
+class Kitty
+
+	def initialize
+		p "Initializing new kitty instance ..."
+	end
+
+	def play(toy)
+		p "The kitty loves to play with #{toy}!"
+	end
+
+	def chase(thing)
+		p "The kitty is chasing the #{thing}!"
+	end
+
+end
+
+
+def create_kitty(number)
+	kitties = []
+	number.times do
+		kitties << Kitty.new	
+	end
+	kitties
+end
+
+kitties = create_kitty(50)
+
+kitties.each do |i|
+	toys = ["string", "cotton balls", "yarn", "food", "feathers"]
+	things = ["laser pointer", "mouse", "rat", "flies", "spiders"]
+	i.play(toys.sample)
+	i.chase(things.sample)
+end
+# kitty = Kitty.new
+
+kitties[2].play("cotton ball")
+kitties[3].chase("mouse")
+kitties[5].play("yarn")
