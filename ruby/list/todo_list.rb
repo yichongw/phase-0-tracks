@@ -18,4 +18,8 @@ def delete_item(item)
 	p @list
 end
 
+def get_item(index)
+	p @list[index]
+end
+
 end
