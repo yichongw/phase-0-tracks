@@ -13,4 +13,9 @@ def add_item(item)
 	p @list
 end
 
+def delete_item(item)
+	@list.delete(item)
+	p @list
+end
+
 end
