@@ -10,7 +10,7 @@ end
 
 def add_item(item)
 	@list << item
-	p list
+	p @list
 end
 
 end
