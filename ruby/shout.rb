@@ -21,7 +21,7 @@
 #Create module, add two classes for Bird and Plane, and add driver codes to Flight.rb
 
 # Release 3:
-# Recreate the shout module by defining two classes within
+# Recreate the shout moduletw by defining two classes within
 # test with driver codes
 module Shout
 
