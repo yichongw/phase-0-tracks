@@ -1,0 +1,26 @@
+Release 1:
+Instruction:
+Using plain old English in a text file or other scratch pad, pseudocode a class for a word-guessing game that meets the following specifications. Assume your driver code will handle input and output as far as the user is concerned. In other words, write a class designed for a computer program to use, not one designed for a human to use directly, then use driver code to bridge the gap between human and Ruby object.
+
+One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
+Guesses are limited, and the number of guesses available is related to the length of the word.
+Repeated guesses do not count against the user.
+The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
+The user should get a congratulatory message if they win, and a taunting message if they lose.
+
+Pseudocode:
+Class for word-guessing game
+
+define Intitalize method
+
+a method to ask user to enter a word (string) and store it
+split that string into array
+a new array is created with "-" based on the length of that word
+
+a method to ask another user to guess what word is it
+the other user will have limited chance to guess the word
+chance will be 1 less than the length of the word
+
+everytime the other user guessed right, the correct letter will put in place of the "-" of the displayed array
+
+a method that displays congratulatory message "Good Job, you got it!" if the other user win, and a taunting message if lose "Haha, better luck next time!"
