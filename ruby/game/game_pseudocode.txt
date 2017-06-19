@@ -11,16 +11,28 @@ The user should get a congratulatory message if they win, and a taunting message
 Pseudocode:
 Class for word-guessing game
 
-define Intitalize method
+Intitalize method
+input: 	word (string)
+steps: 	
+output: none
 
-a method to ask user to enter a word (string) and store it
-split that string into array
-a new array is created with "-" based on the length of that word
+Method to ask user to enter a word (string) and store it
+input:	answer entered by the user (string)
+steps:	method to take that word
+		set that word as the answer 	
+		split that string into array
+		a new array is created with "-" based on the length of that word
+output: array
 
-a method to ask another user to guess what word is it
-the other user will have limited chance to guess the word
-chance will be 1 less than the length of the word
+Method to ask another user to guess what word is it
+input: 	letter
+steps:	the other user will have limited chance to guess the word
+		chance will be 1 more than the length of the word
+		everytime the other user guessed right, the correct letter will put in place of the "-" of the displayed array
+output: array
 
-everytime the other user guessed right, the correct letter will put in place of the "-" of the displayed array
-
-a method that displays congratulatory message "Good Job, you got it!" if the other user win, and a taunting message if lose "Haha, better luck next time!"
+Method that displays congratulatory message 
+input: 	word (string)
+steps:	"Good Job, you got it!" if the other user win
+		"Haha, better luck next time!" if lose
+output: message
