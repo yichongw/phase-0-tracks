@@ -20,8 +20,8 @@ class VirusPredictor
 
 
  def virus_effects
-    predicted_deaths
-    speed_of_spread
+    predicted_deaths#(@population_density, @population, @state)
+    speed_of_spread#(@population_density, @state)
   end
 
 private
@@ -52,32 +52,30 @@ private
 
    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
- end
+  end
 # predicts speed of spread in each state based on population density
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
 
-   speed += if @population_density >= 200
-       0.5
-    elsif @population_density >= 150
-      1
-    elsif @population_density >= 100
-      1.5
-    elsif @population_density >= 50
-      2
-    else
-      2.5
-    end
+    speed += if @population_density >= 200
+                  0.5
+            elsif @population_density >= 150
+                  1
+            elsif @population_density >= 100
+                  1.5
+            elsif @population_density >= 50
+                  2
+            else
+                  2.5
+            end
 
-   puts " and will spread across the state in #{speed} months.\n\n"
+    puts " and will spread across the state in #{speed} months.\n\n"
+  end
 #change to speed += if ...
 #remove "speed += from each individual line "
-  end
-
 end
-
 #=======================================================================
 
 # DRIVER CODE
@@ -104,3 +102,17 @@ end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# One uses the actual string as the key, the other uses a symbol.
+
+# What does require_relative do? How is it different from require?
+# require_relative get codes from another ruby file that is in the same directory as the current file. require does the samething, but need to locate the file(s) from the home directory.
+
+# What are some ways to iterate through a hash?
+# .each method
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# I'm amazed that after we deleted everything but the method names, the program can still function.
+
+# What concept did you most solidify in this challenge?
+# The concept of private, you can't call the method when it's under private. 
