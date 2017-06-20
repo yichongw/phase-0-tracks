@@ -8,3 +8,11 @@ function reverse(word) {
 	var reverseWord = originalWord.reverse().join("");
 	return reverseWord;
 }
+
+// driver code
+var testWord = "awesome";
+var finalWord = reverse("emosewa");
+
+if (testWord == finalWord) {
+	console.log("the original word is " + finalWord +"!");
+}
