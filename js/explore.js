@@ -3,3 +3,8 @@
 // join the letters in the array to reform the string with the join method
 // return  the string
 
+function reverse(word) {
+	var originalWord = word.split("");
+	var reverseWord = originalWord.reverse().join("");
+	return reverseWord;
+}
