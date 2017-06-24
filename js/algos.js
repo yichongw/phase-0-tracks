@@ -14,7 +14,7 @@ function longestPhrase(phraseArray) {
 			phrase = phraseArray[i];
 		}
 	}
-	console.log(phrase);
+	return phrase;
 }
 
 // Driver code:
@@ -41,5 +41,39 @@ function keyPair(objectOne, objectTwo) {
 keyPair({name: "Steven", age: 54}, {name: "Tamir", age: 54});
 keyPair({animal: "Dog", legs: 4}, {animal: "Cat", legs: 3});
 
+// Release 2:
+// pseudocode
+// takes an integer for the function, and return an array of words with random lengths (1 to 10)
+// words are random letters and the number of words corresponded to the integer entered
+// print the array
 
+function getRandomInteger(min, max) {
+	min = Math.ceil(min);
+  	max = Math.floor(max);
+  	return Math.floor(Math.random() * (max - min)) + min;
+}
 
+function randomGenerator(integer) {
+	var letters = "abcdefghijklmnopqrstuvwxyz";
+	var split = letters.split("");
+	var length = getRandomInteger(1, 10);
+	var array = [];
+	for (var i = 0; i < length; i++) {
+		var wordLength = getRandomInteger(0, 25);
+		array.push(split[wordLength]);
+	}
+		var randomArray = array.join("");
+		return randomArray
+}
+
+function randomArray(arrayInteger) {
+	var arrayNew = [];
+	for (var i = 0; i < arrayInteger; i++) {
+		arrayNew.push(randomGenerator())
+	}
+	console.log(arrayNew);
+	return arrayNew
+}
+
+// // Driver code:
+console.log(longestPhrase(randomArray(10)));
