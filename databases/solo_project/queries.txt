@@ -1,0 +1,55 @@
+Release 2: Execute SQL Queries
+1. Display the information in one table (either table is fine).
+sqlite> SELECT * FROM superheroes;
+Iron Man|1963|False|1
+Superman|1938|True|2
+Batman|1939|False|2
+Black Widow|1964|False|1
+Wonder Woman|1941|True|2
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+sqlite> UPDATE superheroes SET first_appearance=1942 WHERE name="Wonder Woman";
+sqlite> SELECT * FROM superheroes;
+Iron Man|1963|False|1
+Superman|1938|True|2
+Batman|1939|False|2
+Black Widow|1964|False|1
+Wonder Woman|1942|True|2
+
+3. Display the information in both tables using one query.
+sqlite> SELECT * FROM superheroes, companies WHERE superheroes.company_id = companies.id;
+Iron Man|1963|False|1|1|Marvel
+Superman|1938|True|2|2|DC
+Batman|1939|False|2|2|DC
+Black Widow|1964|False|1|1|Marvel
+Wonder Woman|1942|True|2|2|DC
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+sqlite> SELECT superheroes.name, companies.company FROM superheroes JOIN companies ON superheroes.company_id = companies.id;
+Iron Man|Marvel
+Superman|DC
+Batman|DC
+Black Widow|Marvel
+Wonder Woman|DC
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+sqlite> DELETE FROM superheroes WHERE name="Wonder Woman";
+sqlite> SELECT * FROM superheroes;                                          
+Iron Man|1963|False|1
+Superman|1938|True|2
+Batman|1939|False|2
+Black Widow|1964|False|1
+
+Release 3: Research on Your Own
+Try a few different joins in your database, and record the commands and the output in queries.txt.
+sqlite> SELECT superheroes.first_appearance, companies.company FROM superheroes JOIN companies ON superheroes.company_id = companies.id;
+1963|Marvel
+1938|DC
+1939|DC
+1964|Marvel
+
+sqlite> SELECT companies.company, superheroes.name, superheroes.has_super_power FROM superheroes JOIN companies ON superheroes.company_id = companies.id;
+Marvel|Iron Man|False
+DC|Superman|True
+DC|Batman|False
+Marvel|Black Widow|False
