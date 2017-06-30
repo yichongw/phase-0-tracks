@@ -1,3 +1,4 @@
+Release 2: Execute SQL Queries
 1. Display the information in one table (either table is fine).
 sqlite> SELECT * FROM superheroes;
 Iron Man|1963|False|1
@@ -38,3 +39,17 @@ Iron Man|1963|False|1
 Superman|1938|True|2
 Batman|1939|False|2
 Black Widow|1964|False|1
+
+Release 3: Research on Your Own
+Try a few different joins in your database, and record the commands and the output in queries.txt.
+sqlite> SELECT superheroes.first_appearance, companies.company FROM superheroes JOIN companies ON superheroes.company_id = companies.id;
+1963|Marvel
+1938|DC
+1939|DC
+1964|Marvel
+
+sqlite> SELECT companies.company, superheroes.name, superheroes.has_super_power FROM superheroes JOIN companies ON superheroes.company_id = companies.id;
+Marvel|Iron Man|False
+DC|Superman|True
+DC|Batman|False
+Marvel|Black Widow|False
