@@ -1,0 +1,33 @@
+How do you join three tables?
+
+SELECT
+ first_name,
+ users.last_name AS Last_Name,
+ reviews.stars AS Stars,
+ reviews.comment AS Comment,
+ businesses.name AS Name
+FROM
+ users
+ INNER JOIN reviews ON reviews.id = users.id
+ INNER JOIN businesses ON businesses.id = users.id;
+
+Bradford|Pitt|5|good services|Amir's Towing
+Mandy|Kaling|2|Floor was dirty|Lotus Yoga
+Angela|Jolie|5|great food|Al's Pizza
+
+How do you view the data of all three tables for just one particular business? 
+
+SELECT
+ first_name,
+ users.last_name AS Last_Name,
+ reviews.stars AS Stars,
+ reviews.comment AS Comment,
+ businesses.name AS Name
+FROM
+ users
+ INNER JOIN reviews ON reviews.id = users.id
+ INNER JOIN businesses ON businesses.id = users.id
+WHERE
+ businesses.Name = "Al's Pizza";
+
+Angela|Jolie|5|great food|Al's Pizza
