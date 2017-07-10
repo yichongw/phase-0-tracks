@@ -6,7 +6,6 @@ require 'sqlite3'
 
 # create SQLite3 database
 db = SQLite3::Database.new("awesome.db")
-db.results_as_hash = true
 
 # create table for users
 create_users_table = <<-SQL
@@ -42,8 +41,8 @@ def user_input
 	name = gets.chomp.capitalize
 	puts "How old are you?"
 	age = gets.chomp.to_i
-	puts "How much do you weight?"
-	weight = gets.chomp.to_i
+	puts "How much do you weight? (in lbs)"
+	weight = gets.chomp.to_f
 	puts "What is today's date?"
 	date = gets.chomp
 	puts "How many push ups did you do?"
@@ -60,4 +59,17 @@ def user_input
 	minutes_jogged = gets.chomp.to_f
 end
 
+# store user inputs into database
+def store_users(db, name, age, weight)
+	db.execute("INSERT INTO users (name, age, weight) VALUES (?, ?, ?)", [name, age, weight])
+end
 
+def store_exercises(db, date, number_of_pushups, number_of_setups, number_of_pullups, minutes_of_plank, miles_jogged, minutes_jogged)
+	db.execute("INSERT INTO users (date, number_of_pushups, number_of_setups, number_of_pullups, minutes_of_plank, miles_jogged, minutes_jogged) VALUES (?, ?, ?, ?, ?, ?, ?)", [date, number_of_pushups, number_of_setups, number_of_pullups, minutes_of_plank, miles_jogged, minutes_jogged])
+end
+# provide users output from the database
+exercise = db.execute("SELECT name, age, weight, date, number_of_pushups, number_of_setups, number_of_pullups, minutes_of_plank, miles_jogged, minutes_jogged FROM users, exercises WHERE users.user_id = exercises.exercise_id")
+
+exercise.each do |exercises|
+	puts "On #{date}, at age of #{age}, #{name} weights #{weight}lb, did #{number_of_pushups} push ups, #{number_of_setups} set ups, #{number_of_pullups} pull ups, #{minutes_of_plank} minutes of plank, and jogged #{miles_jogged} miles in #{minutes_jogged} minutes! Awesome job, and please keep it up!"
+end
