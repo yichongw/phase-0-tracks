@@ -1,10 +1,14 @@
 console.log("The script is running!");
+var addLine= $("<li>goes with any decor</li>");
 
-function addPinkBorder(event) {
-  console.log("click happened! here's the click event:");
-  console.log(event);
-  event.target.style.border = "2px solid pink";
-}
+$(document).ready(function(){
 
-var photo = document.getElementById("lizard-photo");
-photo.addEventListener("click", addPinkBorder);
+	$("ul").on("mouseenter",function(event){
+	  $(this).append(addLine);
+	});
+
+	$("ul").on("mouseleave",function(event){
+	  $(this).find("li").last().remove();
+	});
+
+});
