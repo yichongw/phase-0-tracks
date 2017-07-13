@@ -50,3 +50,14 @@ get '/contact' do
 	"Please contact the followering address for any questions: 123 Fake Street, Fake Town, CA 12345!"
 end
 
+# write a GET route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+get '/great_job' do
+	name = params[:name]
+	if name
+		"Good job, #{name}!"
+	else 
+		"Good job!"
+	end
+end
+
+
