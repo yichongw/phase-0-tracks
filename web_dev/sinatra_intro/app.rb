@@ -66,6 +66,8 @@ get 'add/:number1/:number2' do
 	sum.to_s
 end
 
-
-
-
+# write a GET route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute
+get '/search/:student_name' do
+    student = db.execute("SELECT * FROM students WHERE name=?", [params[:student_name]])[0]
+    student.to_s
+end
